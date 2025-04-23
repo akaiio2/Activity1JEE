@@ -1,15 +1,21 @@
 package presentation;
 
+
 import metier.IMetier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class PresAvecSpring {
+public class PresAvecSpring implements IMetier {
 
     public static void main(String[] args) {
         //
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         IMetier metier =context.getBean(IMetier.class);
         System.out.println("RES="+metier.calcul());
+    }
+
+    @Override
+    public double calcul() {
+        return 0;
     }
 }
